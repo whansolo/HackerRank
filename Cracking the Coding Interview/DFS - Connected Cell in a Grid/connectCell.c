@@ -11,14 +11,11 @@ int countCell(int **grid, int i, int j, int n, int m){
 
     grid[i][j] = 0;
     int count = 1; //grid[i][j] == 1
-    count += countCell(grid, i-1, j-1, n, m);
-    count += countCell(grid, i, j-1, n, m);
-    count += countCell(grid, i+1, j-1, n, m);
-    count += countCell(grid, i-1, j, n, m);
-    count += countCell(grid, i+1, j, n, m);
-    count += countCell(grid, i-1, j+1, n, m);
-    count += countCell(grid, i, j+1, n, m);
-    count += countCell(grid, i+1, j+1, n, m);
+    for(int x = i - 1; x <= i + 1; x++){
+        for(int y = j - 1; y <= j + 1; y++){
+          count += countCell(grid, x, y, n, m);
+        }
+    }
     return count;
 }
 
