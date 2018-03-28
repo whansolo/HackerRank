@@ -20,6 +20,13 @@ int main(){
         b[i] = a[(i + k) % n];
         printf("%d ", a[(i + k) % n]);
     }
+    /** use pointer:
+    int *b = a + k;
+    for(int i = 0; i < n; i++){
+        if(b >= (a + n)) b = a;
+        printf("%d ", *b++);
+    }
+    */
 
     return 0;
 }
